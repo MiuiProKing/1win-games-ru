@@ -7,7 +7,8 @@ const number = value => Number.isFinite(value)?value.toFixed(2):'—';
 const clock = value => Number.isFinite(value)?new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Kiev',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(value):'—';
 const span = value => Number.isFinite(value)?Math.round(value/60000)+' мин':'—';
 
-export function startLive(container, game, {onUpdate = () => {}} = {}) {
+export function startLive(container, game, {onUpdate = () => {}, pollMs = 5000} = {}) {
+  const pollDelay=Number.isFinite(pollMs)?Math.max(2000,pollMs):5000;
   container.innerHTML=`<div class="live-source-line"><span class="mode-pill live" id="live-status">Подключение…</span><span id="live-updated">Источник: наш архив LuckyJet</span></div>
     <section class="live-hero game-panel"><div class="live-orbit" aria-hidden="true"></div><span class="micro-label">Последний завершённый результат</span><strong class="live-value" id="live-value">—</strong><span id="live-time">Ожидание данных</span></section>
     <p class="live-note" id="live-message" role="status">Загружаем завершённые результаты из нашего источника.</p>
@@ -61,7 +62,7 @@ export function startLive(container, game, {onUpdate = () => {}} = {}) {
       if(nextRevision!==revision){analyzedAt=Date.now();report=globalThis.LuckyJetMarked.analyze(rows,{now:analyzedAt,gameOrderVerified:false});revision=nextRevision;}
       error='';failures=0;lastSuccess=Date.now();render();
     }catch(err){if(!disposed&&active&&!document.hidden){failures++;error=err?.name==='AbortError'?'Источник не ответил за 15 секунд. Повторим запрос.':err instanceof TypeError?'Не удалось прочитать API. Проверьте интернет-соединение.':err.message;render();}}
-    finally{clearTimeout(timeout);inflight=false;if(!disposed&&active&&!document.hidden)timer=setTimeout(poll,failures?Math.min(60000,5000*2**Math.min(failures,4)):5000);}
+    finally{clearTimeout(timeout);inflight=false;if(!disposed&&active&&!document.hidden)timer=setTimeout(poll,failures?Math.min(60000,5000*2**Math.min(failures,4)):pollDelay);}
   }
   const refresh=()=>{clearTimeout(timer);if(!active)active=true;if(!inflight)poll();render();};
   const pause=()=>{active=!active;clearTimeout(timer);if(!active)controller?.abort();else if(!inflight)poll();render();};

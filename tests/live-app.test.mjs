@@ -74,3 +74,10 @@ test('both reference skins receive the same real model state including API failu
   h.queue.push(new TypeError('offline'));h.run(5000);await flush();assert.ok(states.at(-1).error);
   h.node('live-pause').emit('click');assert.equal(states.at(-1).active,false);
 });
+
+test('V12 polls the authorized history every two seconds and keeps the same delta cursor contract',async t=>{
+  const h=harness(t);h.queue.push(fixture());h.start({pollMs:2000});await flush();
+  h.queue.push({rounds:[]});h.run(2000);await flush();
+  assert.equal(h.calls.length,2);assert.equal(h.calls[1].url.searchParams.get('after'),'300');
+  assert.equal(h.calls[1].options.headers['session-id'],undefined);
+});

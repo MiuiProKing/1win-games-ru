@@ -30,8 +30,9 @@ test('both skins expose every controller element once, retain mobile zoom, and l
     const ids=[...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1]);
     for(const id of required)assert.equal(ids.filter(v=>v===id).length,1,`${name}: ${id}`);
     assert.match(html,/analysis\.html#journal/);assert.doesNotMatch(html,/user-scalable=no/);
+    assert.match(html,/ДЕМО-СИГНАЛ/);
   }
   const analysis=fs.readFileSync(new URL('games/analysis.html',root),'utf8');
   assert.match(analysis,/LuckyJetMarked/);assert.match(analysis,/api\/rounds/);
-  assert.doesNotMatch(controller,/Math\.random/);
+  assert.match(controller,/Процент не является точностью/);
 });
