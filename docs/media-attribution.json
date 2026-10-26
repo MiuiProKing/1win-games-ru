@@ -1,0 +1,104 @@
+{
+  "source": "https://minimal-magic-load.lovable.app/",
+  "type": "publicly-served-game-artwork-reference",
+  "files": [
+    {
+      "key": "luckyjetv12",
+      "file": "assets/images/luckyjetv12.webp",
+      "bytes": 88002,
+      "sha256": "10873e4aa36f5f1a777e83ae5d525bdd8a936a032b9efca64f8066c9222259a2",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/dba714cc-6c5c-4ee4-a319-8eb0b0d7fc62/luckyjetv12-hd.webp"
+    },
+    {
+      "key": "football",
+      "file": "assets/images/football.webp",
+      "bytes": 97952,
+      "sha256": "0196dc91e724cef86163e726fff1faf4c39217634f9ec491d8c0aeab2a9e0335",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/ec585276-ceb9-4232-9a55-147e58d01a11/football-hd.webp"
+    },
+    {
+      "key": "luckyjet",
+      "file": "assets/images/luckyjet.webp",
+      "bytes": 81856,
+      "sha256": "7f0f737721ae2974ef66060c94ffedf3607b5b016d090df3ab45dba55fb11e5c",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/bb81020d-e5c3-46d9-9f10-1aea79e2a5b4/luckyjet-hd.webp"
+    },
+    {
+      "key": "minesbb",
+      "file": "assets/images/minesbb.webp",
+      "bytes": 65868,
+      "sha256": "2cb8068fe524a74795decdf1561e18d26d34332da628a66c185068de52fdeacc",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/9eed7a16-1034-48bf-8176-f1ec64f2334d/minesbb-hd.webp"
+    },
+    {
+      "key": "towers",
+      "file": "assets/images/towers.webp",
+      "bytes": 62742,
+      "sha256": "ee0fe60fc2b81abe2c0e48f0f9cbe562cb464c62d6a6184cb176b69759e2bad4",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/06244512-deef-45c6-bac1-471bd73d0920/towers-hd.webp"
+    },
+    {
+      "key": "coinflip",
+      "file": "assets/images/coinflip.webp",
+      "bytes": 57328,
+      "sha256": "3c8c17cf70d0a9897aa76c64ede7dfa1e52f56edc385bd2e4d02347c53cd1cc6",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/522bb15e-4d6d-4e79-8092-d425771f0be7/coinflip-hd.webp"
+    },
+    {
+      "key": "thimbles",
+      "file": "assets/images/thimbles.webp",
+      "bytes": 184324,
+      "sha256": "d51a4c843c96fc99c94f0259802f68b8857cb84b0feaa6e799f1a64ef8f7acd9",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/3cd37517-e698-41d1-b57b-8c79ad5d5629/thimbles-hd.webp"
+    },
+    {
+      "key": "mine",
+      "file": "assets/images/mine.webp",
+      "bytes": 41110,
+      "sha256": "73f4b381a47573bb2654829249829b10f75a22f7d3e43789b642a76b7fb5021e",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/0be871bd-6a53-428b-b48e-644ed9363a40/mine-hd.webp"
+    },
+    {
+      "key": "rocket",
+      "file": "assets/images/rocket.webp",
+      "bytes": 33800,
+      "sha256": "530985242bc3ac08a1d003154d66c6be16de33b60595d17e9ec94da6e0812c1a",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/93c48057-7f61-40b6-8520-42725c5c46a0/rocket.webp"
+    },
+    {
+      "key": "jetx",
+      "file": "assets/images/jetx.webp",
+      "bytes": 133824,
+      "sha256": "06d8c29d892ee947401225df87e170427197264cec82ecc684f53d51fa14284b",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/eab37cca-7698-4b81-82d6-1cc84843e58b/jetx-hd.webp"
+    },
+    {
+      "key": "aviator",
+      "file": "assets/images/aviator.webp",
+      "bytes": 52100,
+      "sha256": "788b9b5188e68a64328dee840ddbf83e567c8c05939462b9187e7afb3fcd3d9b",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/9c1b7c46-5df4-4b63-a492-5d78a381a204/aviator-hd.webp"
+    },
+    {
+      "key": "crash",
+      "file": "assets/images/crash.webp",
+      "bytes": 65906,
+      "sha256": "ae09dd76c43afeadb311a75cf5abb3ad21b808473f9f168bfc0d35550567796c",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/4ffc55d5-27f3-4f6f-8d42-9e6f84ea00d3/crash-hd.webp"
+    },
+    {
+      "key": "kamikaze",
+      "file": "assets/images/kamikaze.webp",
+      "bytes": 138826,
+      "sha256": "e7af6b811fd37d37527edbc0db6cba5867d181ea3c525017f41128d42e93ac32",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/6d2a11f2-fbdf-45a9-b60f-551ab6c8fdf2/kamikaze-hd.webp"
+    },
+    {
+      "key": "thimbles2",
+      "file": "assets/images/thimbles2.webp",
+      "bytes": 131408,
+      "sha256": "d62cb738440e6efed5a013d58e40f9eca8e5b4a09aa3b9ce528f70a5bc5b8893",
+      "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/cbf8f97f-c4bf-4386-a039-c91c280ed3f6/thimbles-hd.webp"
+    }
+  ]
+}

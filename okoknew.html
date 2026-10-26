@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f8fb">
+  <meta name="description" content="Компактный русский каталог 1WIN GAMES: 14 игровых интерфейсов, LIVE LuckyJet и учебные режимы.">
+  <title>Все игры — 1WIN GAMES</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script>try{const t=localStorage.getItem('god-games-ru:theme');if(t==='dark')document.documentElement.dataset.theme='dark'}catch{}</script>
+</head>
+<body class="compact-page" data-catalog-page="compact">
+  <a class="skip-link" href="#catalog">К каталогу игр</a>
+  <header class="compact-header"><div class="compact-header-inner"><a class="icon-button" href="index.html" aria-label="На главную"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></a><a class="compact-brand" href="index.html">1WIN <b>GAMES</b></a><button class="theme-button" type="button" data-theme-toggle aria-label="Включить тёмную тему" aria-pressed="false"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13a8.8 8.8 0 0 1-9.7-9.7A8.8 8.8 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg><span class="sr-only" data-theme-label>Тёмная тема</span></button></div></header>
+  <main class="compact-main" id="catalog">
+    <div class="compact-intro"><div><span class="eyebrow">КОЛЛЕКЦИЯ ИГР</span><h1>Выберите игру</h1></div><span class="language-tag">РУ</span></div>
+    <div class="catalog-toolbar">
+      <form class="search-form" role="search"><label class="sr-only" for="game-search">Найти игру</label><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="game-search" type="search" placeholder="Название игры…" autocomplete="off" maxlength="100"><button type="button" id="search-clear" aria-label="Очистить поиск" hidden>×</button></form>
+      <div class="filter-list" role="group" aria-label="Режимы каталога"><button class="filter-button active" type="button" data-filter="all" aria-pressed="true">Все <span data-filter-count="all">14</span></button><button class="filter-button" type="button" data-filter="live" aria-pressed="false"><span class="mini-dot" aria-hidden="true"></span> LIVE <span data-filter-count="live">2</span></button><button class="filter-button" type="button" data-filter="demo" aria-pressed="false">Учебные <span data-filter-count="demo">12</span></button></div>
+    </div>
+    <div class="catalog-meta"><p id="catalog-summary" aria-live="polite">14 игр в коллекции</p><a href="index.html#catalog">Полный вид <span aria-hidden="true">↗</span></a></div>
+    <div class="games-grid" id="games-grid" aria-label="Коллекция игр"></div>
+    <div class="empty-state" id="search-empty" hidden><span aria-hidden="true">⌕</span><h2>Ничего не найдено</h2><p>Попробуйте другое название.</p><button class="button button-secondary" type="button" data-reset-search>Показать все</button></div>
+    <noscript><div class="notice">Включите JavaScript для каталога или откройте <a href="games/luckyjetv12.html">полный анализ Лаки Джет</a>.</div></noscript>
+    <details class="catalog-help"><summary>Что означают LIVE и ДЕМО?</summary><p><b>LIVE:</b> страницы Лаки Джет используют наш источник завершённых результатов. Оценки модели не гарантируют будущий коэффициент.</p><p><b>ДЕМО:</b> другие игры показывают учебную механику. Они не подключены к реальному игровому серверу и не предсказывают его результаты.</p></details>
+    <footer class="compact-footer"><p>Независимая русская версия интерфейса.</p><div><a href="https://t.me/GOD_PREDITOR" target="_blank" rel="noopener noreferrer">Наша группа ↗</a><a href="https://t.me/AllPredictorVrs2_bot" target="_blank" rel="noopener noreferrer">Мини-приложение ↗</a></div></footer>
+  </main>
+  <div class="page-loading" id="page-loading" role="status" aria-live="polite" hidden><div class="loading-orbit"><span></span><img id="loading-image" alt=""></div><strong id="loading-title">Открываем игру</strong><p>Открываем страницу…</p></div>
+  <script type="module" src="assets/catalog.js"></script>
+</body>
+</html>

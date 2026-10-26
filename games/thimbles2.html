@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080b13">
+<meta name="description" content="Русская версия интерфейса. Учебные режимы и отдельно подключённый источник завершённых результатов LuckyJet.">
+<title>Напёрстки · 1WIN GAMES · Русская версия</title>
+<link rel="icon" href="../assets/images/thimbles2.webp" type="image/webp">
+<link rel="stylesheet" href="../assets/game.css">
+</head>
+<body data-game="thimbles2">
+<div class="game-app">
+  <nav class="game-nav" aria-label="Навигация по играм"><a href="../okoknew.html">← Каталог</a><a class="home-link" href="../index.html">Главная</a><button class="theme-button" type="button" id="theme-button" aria-label="Переключить тему">☀</button></nav>
+  <header class="game-heading"><img id="game-art" src="../assets/images/thimbles2.webp" alt="Напёрстки" width="64" height="64"><div class="heading-copy"><div class="game-eyebrow">1WIN GAMES · РУССКАЯ ВЕРСИЯ</div><h1 id="game-title">Напёрстки</h1><span id="mode-label" class="mode-label">ДЕМОНСТРАЦИЯ</span><a id="full-analysis" class="full-analysis-link" href="luckyjetv12.html#model" hidden>Открыть полный анализ →</a></div></header>
+  <main id="game-main">
+    <div id="live-root" class="live-content" hidden></div>
+    <div id="demo-root" hidden>
+      <p class="demo-notice"><strong>Учебный режим.</strong> Эта страница не подключена к реальной игре. Все значения и отметки генерируются локально для демонстрации интерфейса и не являются прогнозом.</p>
+      <section class="game-panel" aria-labelledby="stage-heading"><h2 id="stage-heading">Демонстрация интерфейса</h2><div class="demo-settings" id="demo-settings" hidden><label for="hazard-count">Мин в учебном поле</label><select id="hazard-count"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><div id="demo-stage" class="demo-stage"></div><div class="demo-actions"><button type="button" id="run-demo" class="primary-button">Запустить демонстрацию</button><button type="button" id="reset-demo" class="secondary-button">Сбросить демонстрацию</button></div><p id="demo-result" class="demo-result" role="status" aria-live="polite">Создайте учебный пример. Подключение к реальной игре не используется.</p></section>
+      <section class="game-panel" aria-labelledby="history-heading"><div class="demo-history-title"><h2 id="history-heading">Ваши демонстрации</h2><span id="history-count">0</span></div><p class="history-caption">До 10 последних учебных результатов · время демонстрации · <span id="history-zone">Киев</span></p><ol id="demo-history" class="demo-history"></ol></section>
+    </div>
+  </main>
+  <footer class="game-footer">Независимая русская версия интерфейса.<br>Демонстрации не используют результаты игрового провайдера.<br><a href="../okoknew.html">Все игры</a> · <a href="../index.html">Главная страница</a></footer>
+  <noscript><p class="game-panel">Для интерактивного режима включите JavaScript в браузере. <a href="../okoknew.html">Вернуться в каталог</a>.</p></noscript>
+</div>
+<script type="module" src="../assets/game.js"></script>
+</body>
+</html>
