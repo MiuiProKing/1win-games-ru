@@ -99,6 +99,13 @@
       "bytes": 131408,
       "sha256": "d62cb738440e6efed5a013d58e40f9eca8e5b4a09aa3b9ce528f70a5bc5b8893",
       "source": "https://minimal-magic-load.lovable.app/__l5e/assets-v1/cbf8f97f-c4bf-4386-a039-c91c280ed3f6/thimbles-hd.webp"
+    },
+    {
+      "key": "luckyjet-pilot",
+      "file": "assets/images/luckyjet-pilot.png",
+      "bytes": 323476,
+      "sha256": "5c85916e4879fe8a4bd15357e8c0dde63ec68aebe01bf631f4bfe60525584ce3",
+      "source": "https://i.postimg.cc/yxrWnYXM/A0173A69-B900-4C8A-8EED-A34776D9A5B2.png"
     }
   ]
 }

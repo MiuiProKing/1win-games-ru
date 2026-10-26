@@ -1,4 +1,4 @@
-const CACHE = 'games-ru-static-20261025-1';
+const CACHE = 'games-ru-static-20261026-2';
 const CORE = ['./','./index.html','./okoknew.html','./assets/site.css','./assets/catalog.js','./assets/catalog-data.js','./assets/icon-192.png','./assets/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('games-ru-static-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

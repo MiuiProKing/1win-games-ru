@@ -7,15 +7,15 @@ const number = value => Number.isFinite(value)?value.toFixed(2):'—';
 const clock = value => Number.isFinite(value)?new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Kiev',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(value):'—';
 const span = value => Number.isFinite(value)?Math.round(value/60000)+' мин':'—';
 
-export function startLive(container, game) {
+export function startLive(container, game, {onUpdate = () => {}} = {}) {
   container.innerHTML=`<div class="live-source-line"><span class="mode-pill live" id="live-status">Подключение…</span><span id="live-updated">Источник: наш архив LuckyJet</span></div>
     <section class="live-hero game-panel"><div class="live-orbit" aria-hidden="true"></div><span class="micro-label">Последний завершённый результат</span><strong class="live-value" id="live-value">—</strong><span id="live-time">Ожидание данных</span></section>
     <p class="live-note" id="live-message" role="status">Загружаем завершённые результаты из нашего источника.</p>
-    <div class="live-controls"><button class="main-action" id="live-refresh" type="button">Обновить анализ</button><button class="secondary-action" id="live-pause" type="button">Пауза</button><a class="secondary-action" href="luckyjetv12.html#model">Полный анализ V12</a></div>
+    <div class="live-controls"><button class="main-action" id="live-refresh" type="button">Обновить анализ</button><button class="secondary-action" id="live-pause" type="button">Пауза</button><a class="secondary-action" href="analysis.html#model">Полный анализ</a></div>
     <section class="game-panel live-model"><span class="micro-label">Экспериментальная модель · 10×+</span><h2>Событие и возможная величина</h2><div id="live-model-state" class="live-note">Нужны минимум 200 записей и 15 событий 10×+.</div><div id="live-horizons" class="live-metric-grid"></div><div id="live-mark-probs" class="live-metric-grid"></div><p id="live-model-time" class="live-note"></p><p id="live-quality-verdict" class="live-note"></p><p class="live-note">Горизонты относятся к доступным записям источника. Полнота и официальный порядок игровых раундов не подтверждены. Примерный срок результата не является временем ставки.</p></section>
     <section class="game-panel"><div class="section-row"><h2>История коэффициентов</h2><span id="live-count">0 записей</span></div><div id="live-statistics" class="live-metric-grid"></div><div id="live-history" class="live-history"></div><p class="live-note">Отображаются последние 60 результатов; модель видит до 2000 загруженных записей. Время — по Киеву.</p></section>`;
   const $ = id => container.querySelector('#'+id);
-  let rows=[],cursor=null,controller=null,timer=null,active=true,disposed=false,inflight=false,failures=0,report=null,revision='',lastSuccess=0,error='';
+  let rows=[],cursor=null,controller=null,timer=null,active=true,disposed=false,inflight=false,failures=0,report=null,revision='',lastSuccess=0,error='',analyzedAt=0;
 
   function render() {
     const status=sourceStatus(rows),current=status.kind==='live'&&!error&&active;
@@ -38,6 +38,7 @@ export function startLive(container, game) {
     const validation=report?.validation;
     $('live-quality-verdict').textContent=validation?`Хронологический тест: ${validation.testRecords} записей, ${validation.testEvents} событий 10×+. ${validation.advantage?'Ошибки ниже базы в этом тесте; преимущество на будущих данных не подтверждено.':'Преимущество перед базовой частотой не подтверждено.'}`:'Историческая проверка появится после загрузки.';
     $('live-pause').textContent=active?'Пауза':'Продолжить';
+    onUpdate({rows,report,active,error,lastSuccess,analyzedAt});
   }
 
   async function poll() {
@@ -57,7 +58,7 @@ export function startLive(container, game) {
       if(incoming.length!==payload.rounds.length)cursor=null;
       else if(orders.length)cursor=Math.max(cursor??0,...orders);
       const nextRevision=JSON.stringify(rows.map(row=>[row.id,row.coefficient,row.timestamp,row.estimated,row.order]));
-      if(nextRevision!==revision){report=globalThis.LuckyJetMarked.analyze(rows,{now:Date.now(),gameOrderVerified:false});revision=nextRevision;}
+      if(nextRevision!==revision){analyzedAt=Date.now();report=globalThis.LuckyJetMarked.analyze(rows,{now:analyzedAt,gameOrderVerified:false});revision=nextRevision;}
       error='';failures=0;lastSuccess=Date.now();render();
     }catch(err){if(!disposed&&active&&!document.hidden){failures++;error=err?.name==='AbortError'?'Источник не ответил за 15 секунд. Повторим запрос.':err instanceof TypeError?'Не удалось прочитать API. Проверьте интернет-соединение.':err.message;render();}}
     finally{clearTimeout(timeout);inflight=false;if(!disposed&&active&&!document.hidden)timer=setTimeout(poll,failures?Math.min(60000,5000*2**Math.min(failures,4)):5000);}

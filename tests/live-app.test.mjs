@@ -22,7 +22,7 @@ function harness(t){
   t.after(()=>{cleanup();for(const [key,descriptor] of originals){if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];}});
   const run=ms=>{const entry=[...timers].find(([,item])=>item.ms===ms);assert.ok(entry,`missing timer ${ms}`);timers.delete(entry[0]);entry[1].fn();};
   const node=id=>root.querySelector('#'+id);
-  const start=()=>{cleanup=startLive(root,{});return cleanup;};
+  const start=(options)=>{cleanup=startLive(root,{},options);return cleanup;};
   return {doc,win,queue,calls,root,node,run,start,timers,intervals};
 }
 const fixture=(now=Date.now())=>({rounds:Array.from({length:300},(_,i)=>({id:'r'+i,coefficient:i%5===0?12+(i%9)*10:1.25+i%4,round_timestamp:new Date(now-(300-i)*30000).toISOString(),feed_order:i+1,estimated:false}))});
@@ -65,4 +65,12 @@ test('a rejected future row forces full snapshot retry instead of skipping its o
   h.queue.push(data);h.start();await flush();
   h.queue.push({rounds:[]});h.run(5000);await flush();
   assert.equal(h.calls[1].url.searchParams.has('after'),false);
+});
+
+test('both reference skins receive the same real model state including API failure and pause',async t=>{
+  const h=harness(t),states=[];h.queue.push(fixture());h.start({onUpdate:s=>states.push(s)});await flush();
+  const ready=states.at(-1);assert.equal(ready.rows.length,300);assert.equal(ready.report.status,'ready');
+  assert.ok(ready.analyzedAt>0);assert.equal(ready.report.event.threshold,10);
+  h.queue.push(new TypeError('offline'));h.run(5000);await flush();assert.ok(states.at(-1).error);
+  h.node('live-pause').emit('click');assert.equal(states.at(-1).active,false);
 });

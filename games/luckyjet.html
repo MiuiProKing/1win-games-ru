@@ -1,29 +1,27 @@
 <!doctype html>
-<html lang="ru" data-theme="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#080b13">
-<meta name="description" content="Русская версия интерфейса. Учебные режимы и отдельно подключённый источник завершённых результатов LuckyJet.">
-<title>Лаки Джет · 1WIN GAMES · Русская версия</title>
-<link rel="icon" href="../assets/images/luckyjet.webp" type="image/webp">
-<link rel="stylesheet" href="../assets/game.css">
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#25124a"><title>LuckyJet — русская версия</title>
+<meta name="description" content="Наш поток LuckyJet, история коэффициентов и оценки модели.">
+<link rel="icon" href="../assets/icon.svg"><link rel="stylesheet" href="../assets/lucky-reference.css?v=2">
 </head>
-<body data-game="luckyjet">
-<div class="game-app">
-  <nav class="game-nav" aria-label="Навигация по играм"><a href="../okoknew.html">← Каталог</a><a class="home-link" href="../index.html">Главная</a><button class="theme-button" type="button" id="theme-button" aria-label="Переключить тему">☀</button></nav>
-  <header class="game-heading"><img id="game-art" src="../assets/images/luckyjet.webp" alt="Лаки Джет" width="64" height="64"><div class="heading-copy"><div class="game-eyebrow">1WIN GAMES · РУССКАЯ ВЕРСИЯ</div><h1 id="game-title">Лаки Джет</h1><span id="mode-label" class="mode-label">ИСТОЧНИК LUCKYJET</span><a id="full-analysis" class="full-analysis-link" href="luckyjetv12.html#model" hidden>Открыть полный анализ →</a></div></header>
-  <main id="game-main">
-    <div id="live-root" class="live-content" hidden></div>
-    <div id="demo-root" hidden>
-      <p class="demo-notice"><strong>Учебный режим.</strong> Эта страница не подключена к реальной игре. Все значения и отметки генерируются локально для демонстрации интерфейса и не являются прогнозом.</p>
-      <section class="game-panel" aria-labelledby="stage-heading"><h2 id="stage-heading">Демонстрация интерфейса</h2><div class="demo-settings" id="demo-settings" hidden><label for="hazard-count">Мин в учебном поле</label><select id="hazard-count"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><div id="demo-stage" class="demo-stage"></div><div class="demo-actions"><button type="button" id="run-demo" class="primary-button">Запустить демонстрацию</button><button type="button" id="reset-demo" class="secondary-button">Сбросить демонстрацию</button></div><p id="demo-result" class="demo-result" role="status" aria-live="polite">Создайте учебный пример. Подключение к реальной игре не используется.</p></section>
-      <section class="game-panel" aria-labelledby="history-heading"><div class="demo-history-title"><h2 id="history-heading">Ваши демонстрации</h2><span id="history-count">0</span></div><p class="history-caption">До 10 последних учебных результатов · время демонстрации · <span id="history-zone">Киев</span></p><ol id="demo-history" class="demo-history"></ol></section>
-    </div>
-  </main>
-  <footer class="game-footer">Независимая русская версия интерфейса.<br>Демонстрации не используют результаты игрового провайдера.<br><a href="../okoknew.html">Все игры</a> · <a href="../index.html">Главная страница</a></footer>
-  <noscript><p class="game-panel">Для интерактивного режима включите JavaScript в браузере. <a href="../okoknew.html">Вернуться в каталог</a>.</p></noscript>
-</div>
-<script type="module" src="../assets/game.js"></script>
-</body>
-</html>
+<body class="skin-classic"><main class="reference-app">
+<div class="rings" aria-hidden="true"></div>
+<nav class="reference-nav" aria-label="Навигация"><a href="../okoknew.html">‹ Все игры</a><a href="luckyjetv12.html">Версия V12 ›</a></nav>
+<header class="top"><div class="brand" aria-label="1win"><i>1</i><b>win</b><span class="brand-dot" aria-hidden="true"></span></div><h1 class="badge"><span>LUCKY</span>JET</h1></header>
+<section class="pilot-card" aria-label="Цель анализа">
+<div class="clouds" aria-hidden="true"><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div class="cloud c4"></div></div>
+<div class="pilot-target" id="target">—</div>
+<div class="pilot" aria-hidden="true"><img src="../assets/images/luckyjet-pilot.png" alt="" width="525" height="770"></div></section>
+<div class="meter" aria-hidden="true"><i id="progress"></i></div>
+<div class="lines"><div>Ориентир: <b id="estimate-time">—</b></div><div>Вероятность: <b id="probability">—</b></div><div>До ориентира: <b id="countdown">—</b></div></div>
+<p class="line-caption">Модельная вероятность ≥10× в следующих 5 записях. Время — по Киеву.</p>
+<p class="window-note" id="window-label" role="status">Загружаем нашу историю…</p>
+<div class="actions"><button class="action" type="button" id="get-analysis">ПОЛУЧИТЬ АНАЛИЗ</button><a class="action" href="https://f1w-4561.com/casino/play/v_1wingames:luckyjet" target="_blank" rel="noopener noreferrer">ОТКРЫТЬ ИГРУ</a></div>
+<div class="source"><i aria-hidden="true"></i><span id="source-label">Подключение…</span></div>
+<p class="classic-last">Последний раунд: <b id="latest">—</b><br><span class="last-time" id="last-time">Ожидание истории</span></p>
+<div class="classic-only-hidden" hidden><span id="previous">—</span><span id="frequency">—</span></div>
+<p class="disclaimer" id="disclaimer">Оценка по истории, не точное время ставки.</p>
+<details class="details"><summary>История и подробный анализ</summary><div id="live-root" class="details-content"></div><p class="window-note"><a href="analysis.html#journal">Журнал окон и проверка результатов →</a></p></details>
+<noscript><p class="noscript">Включите JavaScript для загрузки коэффициентов. <a href="analysis.html">Полная версия анализа</a>.</p></noscript>
+</main><script type="module" src="../assets/lucky-reference.js?v=2"></script></body></html>

@@ -119,7 +119,7 @@ async function boot() {
       // The live module owns visibility/pagehide/pageshow and its poller.
       await startLive($('live-root'),game);
     } catch {
-      $('live-root').innerHTML='<section class="game-panel"><h2>Не удалось загрузить подключение</h2><p>Обновите страницу или откройте <a href="luckyjetv12.html#model">полный анализ LuckyJet</a>.</p></section>';
+      $('live-root').innerHTML='<section class="game-panel"><h2>Не удалось загрузить подключение</h2><p>Обновите страницу или откройте <a href="analysis.html#model">полный анализ LuckyJet</a>.</p></section>';
     }
     return;
   }

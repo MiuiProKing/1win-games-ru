@@ -79,7 +79,7 @@ function bootCatalog() {
     badge.appendChild(document.createTextNode(game.mode === 'live' ? 'LIVE' : 'ДЕМО'));
     wrap.appendChild(badge);
     const title = document.createElement('span'); title.className = 'game-title'; title.textContent = game.title;
-    const caption = document.createElement('span'); caption.className = 'game-caption'; caption.textContent = game.mode === 'live' ? game.key === 'luckyjetv12' ? 'Полный анализ' : 'Наш поток' : 'Учебный режим';
+    const caption = document.createElement('span'); caption.className = 'game-caption'; caption.textContent = game.mode === 'live' ? game.key === 'luckyjetv12' ? 'Карточка V12' : 'Персонаж и облака' : 'Учебный режим';
     card.append(wrap, title, caption);
     card.addEventListener('click', event => {
       if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !loading) return;
